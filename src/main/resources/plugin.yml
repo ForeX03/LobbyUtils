@@ -1,0 +1,31 @@
+name: Global-LobbyUtils
+version: '1.1-SNAPSHOT'
+main: globalcode.forex.Main
+api-version: 1.16
+authors: [ ForeX03 ]
+
+permissions:
+  lobbyutils.reload:
+    description: przeładowanie konfiguracji (komenda /globby reload)
+    default: false
+  lobbyutils.setspawn:
+    description: ustawnienie spawnu (komenda /setspawn)
+    default: false
+  lobbyutils.blockbreak:
+    description: możliwość niszczenia bloków mimo blokady
+    default: false
+  lobbyutils.damage:
+    description: możliwość zadawania obrażeń
+    default: false
+  lobbyutils.chat:
+    description: mozliwosc pisania na chacie
+    default: false
+  lobbyutils.inventory:
+    description: mozliwosc interakcji z ekwipunkiem
+    default: false
+  lobbyutils.inventory.drop:
+    description: mozliwosc interakcji z ekwipunkiem
+    default: false
+  lobbyutils.inventory.pickup:
+    description: mozliwosc interakcji z ekwipunkiem
+    default: false

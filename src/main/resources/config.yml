@@ -1,0 +1,140 @@
+# Plugin napisany przez ForeX03 aka Kofcio26
+
+# Uprawnienia:
+# - lobbyutils.reload - przeładowanie konfiguracji (komenda /globby reload)
+# - lobbyutils.setspawn - ustawnienie spawnu (komenda /setspawn)
+# - lobbyutils.blockbreak - możliwość niszczenia bloków mimo blokady
+# - lobbyutils.chat - możliwość pisania na chacie
+# - lobbyutils.damage - możliwość zadawania obrażeń
+# - lobbyutils.inventory - możliwość interakcji z ekwipunkiem (np. przeniesienie itemów na inny slot)
+# - lobbyutils.inventory.drop - możliwość wyrzucania przedmiotów
+# - lobbyutils.inventory.pickup - możliwość podnoszenia przedmiotów
+
+prefix: "&8× <GRADIENT:3346FF>&lGlobalCode</GRADIENT:33C7FF> &8×&r"
+
+spawn:
+  x: 0
+  y: 64
+  z: 0
+  yaw: 0
+  pitch: 0
+
+misc:
+  block-weather-change: true
+  block-breaking: true
+  breaking-cancelled: " [prefix] &cNie mozesz niszczyć bloków na lobby"
+  block-inventory: true
+  block-drop: true
+  block-pickup: true
+  block-chat: true
+  chat-cancelled: " [prefix] &cNie mozesz pisać na lobby"
+  disable-damage-by-entity: true
+  damage-cancelled: " [prefix] &cNie możesz ranić graczy na lobby"
+  disable-damage-by-environment: true
+  disable-saturation: true
+  teleport-from-void: true
+  teleport-on-join: true
+  disable-join-message: true
+  disable-quit-message: true
+  default-item-slot: 4
+  open-menu-command: "menu"
+  open-menu-command-aliases:
+    - "tryby"
+    - "gry"
+  world: "world"
+
+greeting:
+  #Dostępne opcje: TITLE(aby dodać subtitle wpisz [sub] aby oddzielić tekst), ACTIONBAR, CHAT
+  enabled: true
+  message-type: TITLE
+  message: "[prefix][sub]&aWitaj [player] na serwerze!"
+
+
+auto-message:
+  interval: 10 #co ile mają być wysyłane wiadomości (w sekundach)
+  enabled: true
+  messages:
+    - " [prefix] &7Plugin na Global-LobbyUtils napisany przez &bForeX03"
+    - " [prefix] &7Wpadnij na naszego discorda! &9https://dsc.gg/globalcode"
+    - " [prefix] &aAby zmienić te wiadomości zajrzyj do konfiguracji pluginu!"
+
+
+status:
+  server-online: " &8*>> &aKliknij, aby dołączyć na ten tryb!"
+  server-offline: " &8*>> &cSerwer jest aktualnie offline :("
+
+messages:
+  connect: " [prefix] &7Trwa łączenie z [serwer]"
+  offline: " [prefix] &cSerwer jest aktualnie wyłączony."
+  reload: " [prefix] &aPlik konfiguracyjny został przeładowany!"
+  setspawn: " [prefix] &aPunkt spawnu został ustawiony!"
+
+items:
+  fly-toggler:
+    enabled: true
+    #dostepne opcje: ENABLED, DISABLED
+    default: DISABLED
+    item: FEATHER
+    name: "&8*>> &7Latanie: [status]"
+    status:
+      enabled: "&aWŁĄCZONE"
+      disabled: "&cWYŁĄCZONE"
+    lore: [ ]
+    slot: 2
+  selector:
+    enabled: true
+    item: COMPASS
+    name: "&8*>> &3Tryby gry"
+    lore:
+      - "&8*>> &7Kliknij &bPPM&7, aby otworzyć menu wyboru trybów"
+    slot: 4
+  visibility-toggler:
+    enabled: true
+    #dostepne opcje: HIDE, SHOW
+    default: HIDE
+    item: ENDER_EYE
+    name: "&8*>> &7Gracze: [status]"
+    status:
+      show: "&aWIDOCZNI"
+      hide: "&cUKRYCI"
+    lore: [ ]
+    slot: 6
+
+gui:
+  size: 3
+  name: "&8Wybierz tryb gry:"
+
+servers:
+  waterblock:
+    slot: 12
+    address: localhost:24345
+    bungee: "waterblock"
+    displayname: "&b&lWATERBLOCK"
+    menuname: "&8*>> &b&lWATERBLOCK"
+    item: WATER_BUCKET
+    lore:
+      - " &8*>> &7Wersja gry: &91.16.X - 1.19.X &8(&7Zalecana &f1.19.4&8)"
+      - " &8*>> &7Obecnie na serwerze gra: &9[online] osób&7."
+      - " "
+      - " &8*>> &7Twój statek tonie i budzisz się na &bbezludnej wyspie&7."
+      - " &8*>> &7Zetnij drzewa, zbuduj dom, stwórz największą farme na serwerze!"
+      - " &8*>> &7Odwiedzaj innych graczy na ich wyspach!"
+      - " "
+      - "[status]"
+  survival:
+    slot: 14
+    address: localhost:25568
+    bungee: "survival"
+    displayname: "&c&lSURVIVAL"
+    menuname: "&8*>> &c&lSURVIVAL"
+    item: DIAMOND_SWORD
+    lore:
+      - " &8*>> &7Wersja gry: &91.16.X - 1.19.X &8(&7Zalecana &f1.19.4&8)"
+      - " &8*>> &7Obecnie na serwerze gra: &9[online] osób&7."
+      - " "
+      - " &8*>> &7Rozgrywka oparta na wojnach."
+      - " &8*>> &7Zaproś znajomych, stwórzcie największą gildie na serwerze"
+      - " &8*>> &7i podbijajcie innych graczy!"
+      - " "
+      - "[status]"
+
